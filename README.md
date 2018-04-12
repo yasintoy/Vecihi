@@ -28,13 +28,15 @@ The Problem
 ## Installation
 
 **For Backend :**
+Before start, please cd into `Backend` folder. I didn't want to split backend and front-end in the different repository.
+
 ```
 virtualenv env -p python2
 source env/bin/active
-pip install -r requirements/base.txt requirements/local.txt
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserver
+python manage.py runserver --settings='config.settings.local'
 
 ```
 
@@ -44,6 +46,15 @@ npm install
 react-native link
 react-native run-android or
 react-native run-ios
+
+```
+
+## Deployment
+Before start, please change `Backend/ansible/hosts` and `Backend/ansible/vars.yml` with your own infos.
+
+```
+ansible-playbook -i hosts deploy.yml -v
+ansible-playbook -i hosts provision.yml   -v
 
 ```
 When the installation completes, add your api url to `config.py`.
@@ -72,12 +83,23 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 ### No Private Profile
 #### <img src="screen_shots/20.png" width="500" height="500">
 
+### Django provides a admin page for you
+#### <img src="screen_shots/21.png" width="800" height="600">
+
+### Api Documentation (You can see list of api urls)
+#### <img src="screen_shots/23.png" width="800" height="600">
+
+### Api Call Example
+#### <img src="screen_shots/24.png" width="500" height="500">
+
 ## Screens
 
 ### Splash
 #### ![](screen_shots/1.png)
 
 ### Register
+`Department field is university major. If you don't want use in your own project, you can remove( Be sure that you changed required=False in backend Side. I'll handle with this in the future)`
+
 #### ![](screen_shots/2.png)
 
 ### Login
@@ -120,6 +142,8 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 - [ ] Real time chat
 - [ ] Videos Support
 - [ ] Stories (I've already implemented it but not yet used)
+- [ ] Change our Components with Presentational and Container Components [Dan Abramov's article] (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [ ] Use Redux (Why I didn't use in the first init I dont know :()
 
 ## Contributing 
 - Fork the repo
