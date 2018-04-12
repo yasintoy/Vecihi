@@ -117,7 +117,9 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 
 ## TODO
 
-* [Real time chat](https://github.com/yasintoy/Slack-Gitsin/issues/6)
+- [ ] Real time chat
+- [ ] Videos Support
+- [ ] Stories (I've already implemented it but not yet used)
 
 ## Contributing 
 - Fork the repo
