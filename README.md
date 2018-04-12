@@ -19,6 +19,7 @@ The Problem
 - [Installation](#installation)
 - [Getting Started](#getting-started)
 - [Features](#features)
+- [Screens](#screens)
 - [TODO](#todo)
 - [Contributing](#contributing)
 - [License](#license)
@@ -53,12 +54,66 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 
 ## Features
 
-### Low Memory Usage
-#### ![](screen_shots/memoryUsage.png)
+### Take or upload a photo
+#### <img src="screen_shots/15.png" width="500" height="500">
 
-### Notification System
-**We now have notification system for mac/linux**
-#### ![](screen_shots/notification_test.png)
+### Share
+#### <img src="screen_shots/16.png" width="500" height="500">
+
+### See Who Visited Your Profile 
+#### <img src="screen_shots/17.png" width="500" height="500">
+
+### Discover Most Popular Posts
+#### <img src="screen_shots/18.png" width="500" height="500">
+
+### Vote Images and see avarage points
+#### <img src="screen_shots/19.png" width="500" height="500">
+
+### No Private Profile
+#### <img src="screen_shots/20.png" width="500" height="500">
+
+## Screens
+
+### Splash
+#### ![](screen_shots/1.png)
+
+### Register
+#### ![](screen_shots/2.png)
+
+### Login
+#### ![](screen_shots/3.png)
+
+### Home
+#### ![](screen_shots/4.png)
+
+### Post Detail
+#### ![](screen_shots/14.png)
+
+### Discover
+#### ![](screen_shots/5.png)
+
+### Profile
+#### ![](screen_shots/11.png)
+
+### Camera
+#### ![](screen_shots/6.png)
+
+### Photo Library
+#### ![](screen_shots/7.png)
+
+### Preview
+#### ![](screen_shots/8.png)
+
+### Edit
+#### ![](screen_shots/9.png)
+
+### Who Visited Your Profile
+#### ![](screen_shots/10.png)
+
+### Edit Your Profile
+#### ![](screen_shots/12.png)
+
+
 
 ## TODO
 
