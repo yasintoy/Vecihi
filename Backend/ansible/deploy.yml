@@ -1,0 +1,76 @@
+---
+- hosts: servers
+  vars_files:
+    - vars.yml
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Clone/pull project repo
+      git: repo={{ project_repo }} dest={{ install_root }}/{{ project_name }} accept_hostkey=yes force=yes
+      notify:
+      - restart gunicorn
+
+    - name: install python packages
+      pip: requirements={{ install_root }}/{{ project_name }}/requirements.txt
+           virtualenv={{virtualenv_dir}}/env
+      notify:
+      - restart gunicorn
+
+    - name: copy gunicorn_start folder
+      template: src=files/gunicorn_start.j2 dest={{ install_root }}/{{ project_name }}/env/bin/gunicorn_start
+
+    - name: permission for gunicorn_start
+      shell: chmod u+x {{ install_root }}/{{ project_name }}/env/bin/gunicorn_start
+
+    - name: create run folder
+      shell: mkdir -p {{ install_root }}/{{ project_name }}/env/run
+
+    - name: create logs folder
+      shell: mkdir -p {{ install_root }}/{{ project_name }}/env/logs
+
+    - name: create gunicorn-error.log file
+      shell: touch {{ install_root }}/{{ project_name }}/env/logs/gunicorn-error.log
+
+    - name: copy supervisor file
+      template: src=files/supervisor.j2 dest=/etc/supervisor/conf.d/{{ project_name }}.conf
+
+    - name: run shell commands
+      shell: sudo supervisorctl reread
+
+    - name: run shell commands
+      shell: sudo supervisorctl update
+
+    - name: copy nginx config
+      template: src=files/nginx.j2 dest=/etc/nginx/sites-available/{{ project_name }}
+      notify:
+      - restart nginx
+
+    - name: run shell commands
+      shell: sudo ln -s /etc/nginx/sites-available/{{ project_name }} /etc/nginx/sites-enabled/{{ project_name }} -f
+
+    - name: remove default nginx site
+      shell: sudo rm -rf /etc/nginx/sites-enabled/default
+
+    - name: django makemigrations
+      django_manage: command=makemigrations app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }} virtualenv={{ virtualenv_dir }}/env
+
+    - name: django migrate
+      django_manage: command=migrate app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }} virtualenv={{ virtualenv_dir }}/env
+
+    - name: django collectstatic
+      django_manage: command=collectstatic app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }} virtualenv={{ virtualenv_dir }}/env
+
+    - name: make sure nginx server is running
+      service: name=nginx state=started enabled=yes
+
+    - name: make sure gunicorn server is running
+      service: name=gunicorn state=started enabled=yes
+
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+
+    - name: restart gunicorn
+      service: name=gunicorn state=restarted
+# vim:ft=ansible:

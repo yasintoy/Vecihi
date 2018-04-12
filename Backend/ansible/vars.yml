@@ -1,0 +1,82 @@
+---
+# a unix path-friendly name (IE, no spaces or special characters)
+project_name: vecihi
+
+# the base path to install to. You should not need to change this.
+install_root: /home
+
+# the python module path to your project's wsgi file. E.g. for a directory
+# layout like this (assuming `django_hello` is the project_name and top level
+# directory name):
+# django_hello
+# ├── hello
+# │   ├── apps
+# │   ├── __init__.py
+# │   ├── settings.py
+# │   ├── urls.py
+# │   └── wsgi.py
+# ├── manage.py
+# └── requirements.txt
+# the correct wsgi_module value would be `hello.wsgi`
+wsgi_module: config.wsgi
+
+# any directories that need to be added to the PYTHONPATH.
+pythonpath: "{{ install_root }}/{{ project_name }}"
+
+virtualenv_dir: "{{ install_root }}/{{ project_name }}"
+
+# the git repository URL for the project
+project_repo: git@github.com:yasintoy/vecihi.git
+    
+# a private key that has access to the repository URL
+ssh_private_key: ~/.ssh/id_rsa
+
+# The value of your django project's STATIC_ROOT settings.
+# This will be the directory that django's `collectstatic` management command
+# copies static files to, and it must be an absolute path. The default value 
+# here assumes that STATIC_ROOT is set in your settings.py like so:
+# STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'static'))
+static_root: "{{ install_root }}/{{ project_name }}/vecihi/static"
+
+# the dns name or names (space separated) for your server
+server_name: 188.226.170.175
+
+# database setup. Note that because this playbook doesn't touch the default 
+# postgres pg_hba.conf file, we use local password-based authentication for
+# postgres and thus you need to provide a username and password, and your
+# settings.py MUST set "localhost" or "127.0.0.1" as the HOST value. For
+# example, the default settings here assume the following values in
+# settings.py:
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'HOST': 'localhost',
+#         'NAME': 'vecihi',
+#         'USER': 'vecihi_user',
+#         'PASSWORD': 'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc',
+# 	  'PORT': ''
+#     }
+#}
+db_name: vecihi
+db_user: vecihi_user
+db_password: cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc
+
+# apt packages, you should not need to change this unless you have packages
+# listed in your requirements.txt that depend on system packages.
+
+system_packages:
+  - git
+  - nginx
+  - gunicorn
+  - supervisor
+  - postgresql
+  - postgresql-contrib
+  - libpq-dev
+  - postgresql-server-dev-all
+  - python-pip
+  - python-dev
+  - python-psycopg2
+  - python-virtualenv
+  - memcached
+
+# vim:ft=ansible:

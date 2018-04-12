@@ -1,0 +1,7 @@
+[program:vecihi]
+command=/home/vecihi/env/bin/gunicorn_start
+user=root
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/vecihi/env/logs/gunicorn-error.log

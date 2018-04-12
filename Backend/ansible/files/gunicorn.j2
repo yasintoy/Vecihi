@@ -1,0 +1,13 @@
+description "Gunicorn application server handling {{ project_name }}"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+setuid www-data
+setgid www-data
+chdir {{ install_root }}/{{ project_name }}
+
+env PYTHONPATH={{ install_root }}/{{ project_name }}:{{ pythonpath }}
+
+exec /usr/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 {{ wsgi_module }}:application
