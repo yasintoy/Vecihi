@@ -13,7 +13,7 @@ The Problem
 > *So I made a vecihi that provides your own photo sharing app like instagram in 5 minutes for ios and android. In app side, i used react-native also django for the backend side *
 > *I really tired of social media clone app startups. World doesn't need a new instagram,facebook or snapchat etc. Be creatiful and solve the world problems.*
 
-# ![](screen_shots/anim.gif)
+# ![](screen_shots/vecihi.gif)
 
 ## Table of Contents
 - [Installation](#installation)
