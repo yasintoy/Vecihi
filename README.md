@@ -90,7 +90,7 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 #### <img src="screen_shots/23.png" width="800" height="600">
 
 ### Api Call Example
-#### <img src="screen_shots/24.png" width="500" height="650">
+#### <img src="screen_shots/24.png" width="800" height="600">
 
 ## Screens
 
