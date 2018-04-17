@@ -1,17 +1,9 @@
 # ![Vecihi](src/images/vecihi_logo2.png)
 
-The Problem
+Introduction
 =================
-> *Nowadays, almost everyone says 
-- 'Hey! we have an idea and probably we'll be rich. 
-- Then, I'm asking what's the idea? 
-- Do you know instagram or facebook?*
-- Yeap
-- think instagram without videos. its gone be awesome. Society needs this app 
-- :tired_face: Are you kidding me?
 
-> *So I made a vecihi that provides your own photo sharing app like instagram in 5 minutes for ios and android. In app side, i used react-native also django for the backend side *
-> *I really tired of social media clone app startups. World doesn't need a new instagram,facebook or snapchat etc. Be creatiful and solve the world problems.*
+> * I made a vecihi that provides your own photo sharing app like Instagram in 5 minutes for ios and android. In app side, i used react-native also django for the backend side. Also, many components can be used for your own startup or new project. *
 
 # ![](screen_shots/vecihi.gif)
 
