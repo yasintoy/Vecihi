@@ -49,7 +49,7 @@ ansible-playbook -i hosts deploy.yml -v
 ansible-playbook -i hosts provision.yml   -v
 
 ```
-When the installation completes, add your api url to `config.py`.
+When the installation completed, add your api url to `config.py`.
 
 ## Getting Started
 
@@ -59,9 +59,6 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 
 ### Take or upload a photo
 #### <img src="screen_shots/15.png" width="500" height="500">
-
-### Share
-#### <img src="screen_shots/16.png" width="500" height="500">
 
 ### See Who Visited Your Profile 
 #### <img src="screen_shots/17.png" width="500" height="500">
