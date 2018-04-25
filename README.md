@@ -9,10 +9,11 @@ Introduction
 
 ## Table of Contents
 - [Installation](#installation)
+- [Deployment](#deployment)
+- [TODO](#todo)
 - [Getting Started](#getting-started)
 - [Features](#features)
 - [Screens](#screens)
-- [TODO](#todo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -50,6 +51,14 @@ ansible-playbook -i hosts provision.yml   -v
 
 ```
 When the installation completed, add your api url to `config.py`.
+
+## TODO
+
+- [ ] Real time chat
+- [ ] Videos Support
+- [ ] Stories (I've already implemented it but not yet used)
+- [ ] Change our Components with Presentational and Container Components [Dan Abramov's article] (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [ ] Use Redux (Why I didn't use in the first init I dont know :()
 
 ## Getting Started
 
@@ -124,15 +133,6 @@ Before start, you should add your server ip adress (http://127.0.0.1:8000/ or se
 ### Edit Your Profile
 #### ![](screen_shots/12.png)
 
-
-
-## TODO
-
-- [ ] Real time chat
-- [ ] Videos Support
-- [ ] Stories (I've already implemented it but not yet used)
-- [ ] Change our Components with Presentational and Container Components [Dan Abramov's article] (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-- [ ] Use Redux (Why I didn't use in the first init I dont know :()
 
 ## Contributing 
 - Fork the repo
