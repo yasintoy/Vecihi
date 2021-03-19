@@ -48,7 +48,7 @@ ipdb==0.10.3
 ipython==5.5.0
 ipython-genutils==0.2.0
 itypes==1.1.0
-Jinja2==2.10
+Jinja2==2.11.3
 jmespath==0.9.3
 MarkupSafe==1.0
 oauthlib==2.0.6
