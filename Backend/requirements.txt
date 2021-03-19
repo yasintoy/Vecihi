@@ -30,7 +30,7 @@ django-rest-framework-nested==0.0.1
 django-rest-swagger==2.1.2
 django-storages==1.6.5
 django-test-plus==1.0.20
-djangorestframework==3.7.3
+djangorestframework==3.11.2
 python-memcached
 docutils==0.14
 enum34==1.1.6
