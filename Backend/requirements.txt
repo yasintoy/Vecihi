@@ -21,7 +21,7 @@ django-activity-stream==0.6.4
 django-anymail==1.2
 django-coverage-plugin==1.5.0
 django-crispy-forms==1.7.0
-django-debug-toolbar==1.9.1
+django-debug-toolbar==1.11.1
 django-environ==0.4.4
 django-extensions==1.9.7
 django-model-utils==3.0.0
