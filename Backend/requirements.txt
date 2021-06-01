@@ -91,7 +91,7 @@ traitlets==4.3.2
 typing==3.6.2
 Unidecode==0.4.21
 uritemplate==3.0.0
-urllib3==1.22
+urllib3==1.26.5
 wcwidth==0.1.7
 Werkzeug==0.12.2
 whitenoise==3.3.1
