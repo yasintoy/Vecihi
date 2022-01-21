@@ -45,7 +45,7 @@ idna==2.6
 imagesize==0.7.1
 ipaddress==1.0.18
 ipdb==0.10.3
-ipython==5.5.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 itypes==1.1.0
 Jinja2==2.10
