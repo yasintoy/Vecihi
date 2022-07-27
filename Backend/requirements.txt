@@ -18,7 +18,7 @@ decorator==4.1.2
 Django==1.10.8
 django-allauth==0.34.0
 django-activity-stream==0.6.4
-django-anymail==1.2
+django-anymail==1.2.1
 django-coverage-plugin==1.5.0
 django-crispy-forms==1.7.0
 django-debug-toolbar==1.9.1
